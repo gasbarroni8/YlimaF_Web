@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.talkweb.ylimaf</groupId>
-    <artifactId>Ylimaf_Web</artifactId>
+    <artifactId>YlimaF_Web</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
