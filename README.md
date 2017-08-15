@@ -10,14 +10,21 @@
 ## 功能设计：
 一. 实体表设计：
 
-    1. 资源表（resource）
-    `CREATE TABLE `resource` (
-      `ID` bigint(10) NOT NULL AUTO_INCREMENT,
-      `Name` varchar(255) NOT NULL,
-      `Type` int(2) NOT NULL,
-      PRIMARY KEY (`ID`)
-    ) DEFAULT CHARSET=utf8;`
+- 资源表（resource）
+    
+       CREATE TABLE `resource` (
+         `ID` bigint(10) NOT NULL AUTO_INCREMENT,
+         `Name` varchar(255) NOT NULL,
+         `Type` int(2) NOT NULL,
+         PRIMARY KEY (`ID`)
+       ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
  
-    2. 电影表（movie）
+- 电影表（movie）
 
-二. 
+- 电视剧表
+
+- 动漫表
+
+- 小说表
+
+二. 模块设计
