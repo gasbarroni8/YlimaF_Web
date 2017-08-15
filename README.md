@@ -8,14 +8,20 @@
 3. 智能下载：根据用户输入的关键字查询资源，如视频播放服务器上不存在资源，则从多媒体资源数据库中查询下载地址下载至视频播放服务器上，下载完成后消息推送。
 
 ## 功能设计：
-###一、实体表设计：
-1. 资源表（Resource）：
-`CREATE TABLE `NewTable` (
+一、实体表设计：
+1. 资源表（Resource）
+
+`CREATE TABLE `Resource` (
+
  `ID`  bigint(10) NOT NULL AUTO_INCREMENT , 
+ 
  `Name`  varchar(255) NOT NULL , 
+ 
  `Type`  int(2) NOT NULL , 
+ 
  PRIMARY KEY (`ID`) 
+ 
  ) 
- DEFAULT CHARACTER SET=utf8
- ;`
+ 
+ DEFAULT CHARACTER SET=utf8;`
 2. 电影表（Movie）
