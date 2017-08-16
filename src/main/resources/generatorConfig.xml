@@ -5,7 +5,7 @@
 
 <generatorConfiguration>
     <properties resource="config-values.properties"/>
-    <classPathEntry location="D:\bundlesV2\mysql\mysql-connector-java\5.1.6\mysql-connector-java-5.1.6.jar"/>
+    <classPathEntry location="D:\myCenterRepository\mysql\mysql-connector-java\5.1.6\mysql-connector-java-5.1.6.jar"/>
     <context id="Mysql" targetRuntime="MyBatis3" defaultModelType="flat">
         <!-- 这里引入扩展插件 -->
         <plugin type="com.zaxk.study.mybatis.MySQLPaginationPlugin"/>

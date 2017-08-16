@@ -41,8 +41,6 @@ public class ApplicationListener implements HttpSessionListener, ServletContextL
 
     private void initApplication(ServletContextEvent event) {
         Application.setContext(event.getServletContext());
-
-        PropertyPlaceholderConfigurer p
     }
 
 

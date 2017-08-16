@@ -103,7 +103,8 @@
 </body>
 <script>
     var app = angular.module('Login', [], function(){console.log('started')});
-    app.controller.constructor
+
+
 
     /* $("#login").on("click", function() {
      var url = "./login";
