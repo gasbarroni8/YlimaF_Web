@@ -14,17 +14,16 @@ import java.util.List;
  * Created by ZhuXu on 2017/8/21 0021.
  */
 @Repository
+@Cacheable(value = "eternalCache")
 public class ResourceDao {
 
     @Autowired
     SqlSession sqlSession;
 
-    @Cacheable(value = "eternalCache")
     public Resource selectByPrimaryKey(long id) {
         return getMapper().selectByPrimaryKey(id);
     }
 
-    @Cacheable(value = "eternalCache")
     public List<Resource> selectByExample(ResourceExample resourceExample) {
         return getMapper().selectByExample(resourceExample);
     }
