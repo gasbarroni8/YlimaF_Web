@@ -27,6 +27,25 @@
 
 - 小说表
 
+- 数据字典表（dict)
+
+        CREATE TABLE `dict` (
+          `ID` int(11) NOT NULL AUTO_INCREMENT,
+          `DICT_ID` varchar(255) NOT NULL,
+          `DICT_DESC` varchar(255) DEFAULT NULL,
+          PRIMARY KEY (`ID`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+- 数据字典项表（dict_item）
+
+        CREATE TABLE `dict_item` (
+          `ID` int(11) NOT NULL AUTO_INCREMENT,
+          `DICT_ID` varchar(255) NOT NULL,
+          `DICT_ITEM` varchar(255) NOT NULL,
+          `DICT_ITEM_VALUE` varchar(255) NOT NULL,
+          PRIMARY KEY (`ID`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 二. 模块设计
 
 - 视频播放服务器
