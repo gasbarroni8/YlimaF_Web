@@ -5,6 +5,7 @@ import com.talkweb.ylimaf.web.pojo.Resource;
 import com.talkweb.ylimaf.web.pojo.ResourceExample;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -18,10 +19,12 @@ public class ResourceDao {
     @Autowired
     SqlSession sqlSession;
 
+    @Cacheable(value = "eternalCache")
     public Resource selectByPrimaryKey(long id) {
         return getMapper().selectByPrimaryKey(id);
     }
 
+    @Cacheable(value = "eternalCache")
     public List<Resource> selectByExample(ResourceExample resourceExample) {
         return getMapper().selectByExample(resourceExample);
     }

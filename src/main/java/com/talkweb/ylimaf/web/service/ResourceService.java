@@ -34,4 +34,8 @@ public class ResourceService {
         return resourceDao.selectByExample(resourceExample);
     }
 
+    public Resource getResource(long id) {
+        return resourceDao.selectByPrimaryKey(id);
+    }
+
 }
