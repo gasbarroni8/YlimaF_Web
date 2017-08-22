@@ -1,6 +1,6 @@
 package com.talkweb.ylimaf.web.service;
 
-import com.talkweb.ylimaf.web.dao.UserDao;
+import com.talkweb.ylimaf.web.dao.UserMapper;
 import com.talkweb.ylimaf.web.pojo.User;
 import com.talkweb.ylimaf.web.pojo.UserExample;
 import com.talkweb.ylimaf.web.servlet.processor.impl.CookieAuthCenterProcessor;
@@ -29,7 +29,7 @@ public class UserService {
     public static final String SPLIT_CHAR = ":";
 
     @Autowired
-    UserDao userDao;
+    UserMapper userMapper;
 
     public Result login(User user) {
 
@@ -37,7 +37,7 @@ public class UserService {
         String password = MD5Util.string2MD5(user.getPassword());
         userExample.createCriteria().andUserNameEqualTo(user.getUserName()).andPasswordEqualTo(password);
 
-        List<User> userList = userDao.selectByExample(userExample);
+        List<User> userList = userMapper.selectByExample(userExample);
         if (userList.isEmpty()) {
             return Result.fail(Error.USER_NOT_EXIST.getValue());
         }
@@ -52,7 +52,7 @@ public class UserService {
     	UserExample userExample = new UserExample();
         userExample.createCriteria().andUserNameEqualTo(user.getUserName());
 
-        List<User> userList = userDao.selectByExample(userExample);
+        List<User> userList = userMapper.selectByExample(userExample);
         if (!userList.isEmpty()) {
             return Result.fail(Error.USER_NAME_EXIST.getValue());
         }
@@ -65,7 +65,7 @@ public class UserService {
         
         password = MD5Util.string2MD5(user.getPassword());
         
-        int success = userDao.insert(user);
+        int success = userMapper.insert(user);
         if(success <= 0) {
         	return Result.fail(Error.SYSTEM_ERROR.getValue());
         }
@@ -75,7 +75,7 @@ public class UserService {
     }
 
     public User loginByCookie(int userId, long expireTime, String cookieHash) {
-        User user = userDao.selectByPrimaryKey(userId);
+        User user = userMapper.selectByPrimaryKey(userId);
         String hash = createHash(userId, user.getPassword(), expireTime);
         if (hash.equals(cookieHash)) {
             return user;

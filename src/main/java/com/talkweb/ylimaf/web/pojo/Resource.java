@@ -30,6 +30,7 @@ public class Resource {
      * This method returns the value of the database column resource.ID
      *
      * @return the value of resource.ID
+     *
      * @mbggenerated
      */
     public Long getId() {
@@ -41,6 +42,7 @@ public class Resource {
      * This method sets the value of the database column resource.ID
      *
      * @param id the value for resource.ID
+     *
      * @mbggenerated
      */
     public void setId(Long id) {
@@ -52,6 +54,7 @@ public class Resource {
      * This method returns the value of the database column resource.Name
      *
      * @return the value of resource.Name
+     *
      * @mbggenerated
      */
     public String getName() {
@@ -63,6 +66,7 @@ public class Resource {
      * This method sets the value of the database column resource.Name
      *
      * @param name the value for resource.Name
+     *
      * @mbggenerated
      */
     public void setName(String name) {
@@ -74,6 +78,7 @@ public class Resource {
      * This method returns the value of the database column resource.Type
      *
      * @return the value of resource.Type
+     *
      * @mbggenerated
      */
     public Integer getType() {
@@ -85,6 +90,7 @@ public class Resource {
      * This method sets the value of the database column resource.Type
      *
      * @param type the value for resource.Type
+     *
      * @mbggenerated
      */
     public void setType(Integer type) {

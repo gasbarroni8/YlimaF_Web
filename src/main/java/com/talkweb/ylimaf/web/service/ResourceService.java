@@ -1,6 +1,6 @@
 package com.talkweb.ylimaf.web.service;
 
-import com.talkweb.ylimaf.web.dao.ResourceDao;
+import com.talkweb.ylimaf.web.dao.ResourceMapper;
 import com.talkweb.ylimaf.web.pojo.Resource;
 import com.talkweb.ylimaf.web.pojo.ResourceExample;
 import com.talkweb.ylimaf.web.util.ValidateUtil;
@@ -20,7 +20,7 @@ public class ResourceService {
     public static final Logger LOG = LoggerFactory.getLogger(ResourceService.class);
 
     @Autowired
-    ResourceDao resourceDao;
+    ResourceMapper resourceMapper;
 
     public List<Resource> queryResource(String resourceName) {
 
@@ -31,11 +31,11 @@ public class ResourceService {
             resourceExample.createCriteria().andNameLike(resourceName);
         }
 
-        return resourceDao.selectByExample(resourceExample);
+        return resourceMapper.selectByExample(resourceExample);
     }
 
     public Resource getResource(long id) {
-        return resourceDao.selectByPrimaryKey(id);
+        return resourceMapper.selectByPrimaryKey(id);
     }
 
 }

@@ -5,7 +5,7 @@
 
 <generatorConfiguration>
     <properties resource="config-values.properties"/>
-    <classPathEntry location="D:\myCenterRepository\mysql\mysql-connector-java\5.1.6\mysql-connector-java-5.1.6.jar"/>
+    <classPathEntry location="D:\bundlesV2\mysql\mysql-connector-java\5.1.6\mysql-connector-java-5.1.6.jar"/>
     <context id="Mysql" targetRuntime="MyBatis3" defaultModelType="flat">
         <!-- 这里引入扩展插件 -->
         <plugin type="com.zaxk.study.mybatis.MySQLPaginationPlugin"/>
@@ -30,17 +30,31 @@
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
-        <javaClientGenerator targetPackage="com.talkweb.ylimaf.web.mapper"
+        <javaClientGenerator targetPackage="com.talkweb.ylimaf.web.dao"
                              targetProject="src/main/java" type="XMLMAPPER">
             <property name="enableSubPackages" value="true"/>
+            <property name="enableRepository" value="true"/>
+            <property name="enableCache" value="eternalCache"/>
         </javaClientGenerator>
 
         <table tableName="USER" domainObjectName="User"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="true">
+            <property name="enableCache" value="userCache"/>
         </table>
 
         <table tableName="RESOURCE" domainObjectName="Resource"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="true">
+            <property name="enableCache" value="false"/>
+        </table>
+
+        <table tableName="DICT" domainObjectName="Dict"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="true">
+        </table>
+
+        <table tableName="DICT_ITEM" domainObjectName="DictItem"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="true">
         </table>

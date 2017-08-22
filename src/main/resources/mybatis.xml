@@ -4,6 +4,6 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <mappers>
-        <package name="com.zaxk.study.mapper"/>
+        <package name="com.talkweb.ylimaf.web.mapper"/>
     </mappers>
 </configuration>
