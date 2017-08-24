@@ -30,6 +30,7 @@ public class Dict {
      * This method returns the value of the database column dict.ID
      *
      * @return the value of dict.ID
+     *
      * @mbggenerated
      */
     public Integer getId() {
@@ -41,6 +42,7 @@ public class Dict {
      * This method sets the value of the database column dict.ID
      *
      * @param id the value for dict.ID
+     *
      * @mbggenerated
      */
     public void setId(Integer id) {
@@ -52,6 +54,7 @@ public class Dict {
      * This method returns the value of the database column dict.DICT_ID
      *
      * @return the value of dict.DICT_ID
+     *
      * @mbggenerated
      */
     public String getDictId() {
@@ -63,6 +66,7 @@ public class Dict {
      * This method sets the value of the database column dict.DICT_ID
      *
      * @param dictId the value for dict.DICT_ID
+     *
      * @mbggenerated
      */
     public void setDictId(String dictId) {
@@ -74,6 +78,7 @@ public class Dict {
      * This method returns the value of the database column dict.DICT_DESC
      *
      * @return the value of dict.DICT_DESC
+     *
      * @mbggenerated
      */
     public String getDictDesc() {
@@ -85,6 +90,7 @@ public class Dict {
      * This method sets the value of the database column dict.DICT_DESC
      *
      * @param dictDesc the value for dict.DICT_DESC
+     *
      * @mbggenerated
      */
     public void setDictDesc(String dictDesc) {

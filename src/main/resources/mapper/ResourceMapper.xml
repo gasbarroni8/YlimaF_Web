@@ -8,7 +8,7 @@
     -->
     <id column="ID" jdbcType="BIGINT" property="id" />
     <result column="Name" jdbcType="VARCHAR" property="name" />
-    <result column="Type" jdbcType="INTEGER" property="type" />
+    <result column="Type" jdbcType="VARCHAR" property="type"/>
   </resultMap>
   <sql id="Example_Where_Clause">
     <!--
@@ -96,7 +96,7 @@
     -->
     insert into resource (ID, Name, Type
       )
-    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.talkweb.ylimaf.web.pojo.Resource">
@@ -124,7 +124,7 @@
         #{name,jdbcType=VARCHAR},
       </if>
       <if test="type != null">
-        #{type,jdbcType=INTEGER},
+        #{type,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -139,7 +139,7 @@
         Name = #{name,jdbcType=VARCHAR},
       </if>
       <if test="type != null">
-        Type = #{type,jdbcType=INTEGER},
+        Type = #{type,jdbcType=VARCHAR},
       </if>
     </set>
     where ID = #{id,jdbcType=BIGINT}
@@ -151,7 +151,7 @@
     -->
     update resource
     set Name = #{name,jdbcType=VARCHAR},
-      Type = #{type,jdbcType=INTEGER}
+    Type = #{type,jdbcType=VARCHAR}
     where ID = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

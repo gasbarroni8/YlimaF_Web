@@ -1,5 +1,4 @@
 import com.alibaba.fastjson.JSONObject;
-import com.talkweb.ylimaf.web.pojo.Resource;
 import com.talkweb.ylimaf.web.service.ResourceService;
 import net.sf.ehcache.Ehcache;
 import org.junit.Test;
@@ -28,13 +27,12 @@ public class ResourceControllerTest extends AbstractJunit {
 
     @Test
     public void queryResource() throws Exception {
-        String resourceName = "你";
-        List<Resource> resourceList = resourceService.queryResource(resourceName);
-        LOG.info(JSONObject.toJSONString(resourceList));
+//        String resourceName = "你";
+//        List<Resource> resourceList = resourceService.queryResource(resourceName);
+//        LOG.info("resourceList:{}", JSONObject.toJSONString(resourceList));
 
         LOG.info(JSONObject.toJSONString(resourceService.getResource(1)));
         LOG.info(JSONObject.toJSONString(resourceService.getResource(1)));
-
 
         Cache cache = cacheManager.getCache("eternalCache");
         Ehcache ehcache = (Ehcache) cache.getNativeCache();

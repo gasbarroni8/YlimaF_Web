@@ -493,6 +493,76 @@ public class DictItemExample {
             addCriterion("DICT_ITEM_VALUE not between", value1, value2, "dictItemValue");
             return (Criteria) this;
         }
+
+        public Criteria andDictItemDescIsNull() {
+            addCriterion("DICT_ITEM_DESC is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDictItemDescIsNotNull() {
+            addCriterion("DICT_ITEM_DESC is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDictItemDescEqualTo(String value) {
+            addCriterion("DICT_ITEM_DESC =", value, "dictItemDesc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDictItemDescNotEqualTo(String value) {
+            addCriterion("DICT_ITEM_DESC <>", value, "dictItemDesc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDictItemDescGreaterThan(String value) {
+            addCriterion("DICT_ITEM_DESC >", value, "dictItemDesc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDictItemDescGreaterThanOrEqualTo(String value) {
+            addCriterion("DICT_ITEM_DESC >=", value, "dictItemDesc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDictItemDescLessThan(String value) {
+            addCriterion("DICT_ITEM_DESC <", value, "dictItemDesc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDictItemDescLessThanOrEqualTo(String value) {
+            addCriterion("DICT_ITEM_DESC <=", value, "dictItemDesc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDictItemDescLike(String value) {
+            addCriterion("DICT_ITEM_DESC like", value, "dictItemDesc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDictItemDescNotLike(String value) {
+            addCriterion("DICT_ITEM_DESC not like", value, "dictItemDesc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDictItemDescIn(List<String> values) {
+            addCriterion("DICT_ITEM_DESC in", values, "dictItemDesc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDictItemDescNotIn(List<String> values) {
+            addCriterion("DICT_ITEM_DESC not in", values, "dictItemDesc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDictItemDescBetween(String value1, String value2) {
+            addCriterion("DICT_ITEM_DESC between", value1, value2, "dictItemDesc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDictItemDescNotBetween(String value1, String value2) {
+            addCriterion("DICT_ITEM_DESC not between", value1, value2, "dictItemDesc");
+            return (Criteria) this;
+        }
     }
 
     /**

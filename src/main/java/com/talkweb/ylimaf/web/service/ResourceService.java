@@ -19,8 +19,13 @@ public class ResourceService {
 
     public static final Logger LOG = LoggerFactory.getLogger(ResourceService.class);
 
+    public static final String RESOURCE_TYPE = "Resource Type";
+
     @Autowired
     ResourceMapper resourceMapper;
+
+    @Autowired
+    DictItemService dictItemService;
 
     public List<Resource> queryResource(String resourceName) {
 
@@ -31,11 +36,25 @@ public class ResourceService {
             resourceExample.createCriteria().andNameLike(resourceName);
         }
 
-        return resourceMapper.selectByExample(resourceExample);
+        List<Resource> resourceList = resourceMapper.selectByExample(resourceExample);
+
+        if (ValidateUtil.isNotEmptyCollection(resourceList)) {
+            resourceList.forEach(resource -> formatResourceType(resource));
+        }
+
+        return resourceList;
     }
 
     public Resource getResource(long id) {
-        return resourceMapper.selectByPrimaryKey(id);
+        Resource resource = resourceMapper.selectByPrimaryKey(id);
+        formatResourceType(resource);
+        return resource;
+    }
+
+    public void formatResourceType(Resource resource) {
+        String type = resource.getType();
+        String typeDesc = dictItemService.getDictItemDesc(RESOURCE_TYPE, type);
+        resource.setType(typeDesc);
     }
 
 }
