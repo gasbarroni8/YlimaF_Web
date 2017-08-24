@@ -15,7 +15,7 @@
        CREATE TABLE `resource` (
          `ID` bigint(10) NOT NULL AUTO_INCREMENT,
          `Name` varchar(255) NOT NULL,
-         `Type` int(2) NOT NULL,
+         `Type` varchar(10) NOT NULL,
          PRIMARY KEY (`ID`)
        ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
  
@@ -43,6 +43,7 @@
           `DICT_ID` varchar(255) NOT NULL,
           `DICT_ITEM` varchar(255) NOT NULL,
           `DICT_ITEM_VALUE` varchar(255) NOT NULL,
+          `DICT_ITEM_DESC` varchar(255) DEFAULT NULL,
           PRIMARY KEY (`ID`)
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
