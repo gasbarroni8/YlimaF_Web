@@ -4,14 +4,13 @@
 
     <diskStore path="java.io.tmpdir"/>
 
-    <!-- 默认缓存 -->
-    <defaultCache
-            maxElementsInMemory="1000"
-            eternal="false"
-            timeToIdleSeconds="3600"
-            timeToLiveSeconds="3600"
-            overflowToDisk="false"
-            memoryStoreEvictionPolicy="LRU"/>
+    <cache name="userCache"
+           maxElementsInMemory="1000"
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="3600"
+           overflowToDisk="false"
+           memoryStoreEvictionPolicy="LRU"/>
 
     <!-- 永久缓存 -->
     <cache name="eternalCache"
